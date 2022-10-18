@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class DeathManager : MonoBehaviour
     public int playerAlive;
     public bool gameOver;
     public bool playerSpawned;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,6 @@ public class DeathManager : MonoBehaviour
     {
         if (playerAlive <= 0 && playerSpawned)
         {
-            
             gameOver = true;
             print("GAMEOVER");
             SceneManager.LoadScene(2);

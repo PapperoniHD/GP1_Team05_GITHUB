@@ -13,10 +13,11 @@ public class PlayerDeath : MonoBehaviour
     private Collider playerCollider;
     private Rigidbody rb;
     private Transform _spawn;
-    public GameObject _mesh;
-    [SerializeField] private bool isDead;
     private IEnumerator _deathState;
 
+    public bool isDead;
+    public GameObject _mesh;
+    
     private bool isGhost;
     private bool deathStateRunning;
     
