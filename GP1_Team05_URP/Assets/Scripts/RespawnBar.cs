@@ -8,20 +8,18 @@ public class RespawnBar : MonoBehaviour
     [SerializeField] private Image respawnBar1;
     [SerializeField] private Image respawnBar2;
 
-    private GameObject player1;
-    private GameObject player2;
+    [SerializeField] private GameObject player1;
+    [SerializeField] private GameObject player2;
 
     private float respawnTimer1;
     private float respawnTimer2;
 
     // Update is called once per frame
     void Update()
-    {
-        player1 = GameObject.Find("Player");
+    {     
         PlayerDeath restartScript1 = player1.GetComponent<PlayerDeath>();
         respawnTimer1 = restartScript1.respawnTime;
 
-        player2 = GameObject.Find("Player");
         PlayerDeath restartScript2 = player2.GetComponent<PlayerDeath>();
         respawnTimer2 = restartScript2.respawnTime;
 
