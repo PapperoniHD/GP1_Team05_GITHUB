@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3454085926876157672}
   - component: {fileID: 1747602594021120333}
   - component: {fileID: 4585873905922534791}
+  - component: {fileID: 3860016838596907716}
   m_Layer: 0
   m_Name: Shield_Pickup
-  m_TagString: Untagged
+  m_TagString: INV
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2640429298331241554}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 48.625824, y: 0.49658284, z: -16.554447}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,3 +86,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3860016838596907716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640429298331241554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009931657, y: 0.009931656, z: 0.009931656}
+  m_Center: {x: 0, y: 0, z: 0}

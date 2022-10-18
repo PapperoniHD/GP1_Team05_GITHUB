@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 663e8cc23de26d34d8d8d4aa40ccd10c
+guid: e6f9e359bc3577a4491b2794fcd1a1dc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: car_paint
-    second: {fileID: 2100000, guid: faad85c8e9007af42b0abb413d3d5884, type: 2}
+    second: {fileID: 2100000, guid: 3b4299827e2eb0043975392f6ffd5339, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
