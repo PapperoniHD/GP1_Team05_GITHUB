@@ -157,10 +157,12 @@ public class PlayerInputScript : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints.None;
             Debug.Log("Jump");
+          
             var newJumpForce = Mathf.Sqrt(jumpForce * -2f * -gravity) * rb.mass;
             rb.velocity = new Vector3(rb.velocity.x, newJumpForce, rb.velocity.z);
 
             _jumpBuffer = 0f;
+            AudioManager.Instance.PlaySFX("Jump");
         }
 
         if (_jumpBuffer > 0) _jumpBuffer -= 5f * Time.deltaTime;

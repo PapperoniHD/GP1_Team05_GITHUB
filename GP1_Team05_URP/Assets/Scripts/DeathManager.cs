@@ -25,6 +25,7 @@ public class DeathManager : MonoBehaviour
             gameOver = true;
             print("GAMEOVER");
             SceneManager.LoadScene(2);
+            AudioManager.Instance.PlaySFX("Death");
         }
     }
 }

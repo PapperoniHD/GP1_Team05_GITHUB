@@ -48,6 +48,7 @@ public class AbilityPickup : MonoBehaviour
         {
             Destroy(other.gameObject);
             invincible = true;
+            AudioManager.Instance.PlaySFX("PowerUp");
         }
     }
 }
