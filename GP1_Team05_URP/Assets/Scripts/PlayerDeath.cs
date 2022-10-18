@@ -8,7 +8,7 @@ public class PlayerDeath : MonoBehaviour
 {
 
     [Header("Death and Respawn")] 
-    [SerializeField] private float respawnTime = 2f;
+    [SerializeField] public float respawnTime = 2f;
     [SerializeField] private float ghostTime = 3f;
     private Collider playerCollider;
     private Rigidbody rb;
