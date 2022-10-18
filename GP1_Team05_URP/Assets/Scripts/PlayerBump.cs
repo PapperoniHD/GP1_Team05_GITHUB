@@ -19,6 +19,7 @@ public class PlayerBump : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerYBounce"))
         {
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, magnitude * 5,0));
+            AudioManager.Instance.PlaySFX("Jump");
         }
     }
 
@@ -29,6 +30,7 @@ public class PlayerBump : MonoBehaviour
             float forceX = transform.position.x - collision.contacts[0].point.x;
             float forceZ = transform.position.z - collision.contacts[0].point.z;
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(forceX,0,forceZ) * magnitude);
+            AudioManager.Instance.PlaySFX("Bump");
         }
         
     }
