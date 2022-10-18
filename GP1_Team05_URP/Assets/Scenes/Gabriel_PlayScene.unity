@@ -737,6 +737,10 @@ MonoBehaviour:
   - {fileID: 32050152052633216, guid: 44c930a54e317b840b5ce389ecd81714, type: 3}
   - {fileID: 32050152052633216, guid: 7f7df631de9e1744ba611f2c90e9e190, type: 3}
   - {fileID: 32050152052633216, guid: a0622c7f4f10d3e42aea7d15f8ce701b, type: 3}
+  - {fileID: 32050152052633216, guid: 2bc132414dc0e42449c5912ea60df265, type: 3}
+  - {fileID: 32050152052633216, guid: 0f3e39d975723284687076971481161f, type: 3}
+  - {fileID: 32050152052633216, guid: 2a43a3e41bf8b294aa4d6a0630bce753, type: 3}
+  - {fileID: 32050152052633216, guid: ad270ab2acd49ac4fb541eb9e8a3cf1c, type: 3}
   _waterHeight: 12.5
   _tiles: 10
   _maxSpeed: 1000
@@ -1046,7 +1050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &524845031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1143,7 +1147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &530818490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2787,6 +2791,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOneScore: 0
   playerTwoScore: 0
+  playerOne: {fileID: 0}
+  playerTwo: {fileID: 0}
+  _scrStrg: {fileID: 11400000, guid: 4f1158850b553d540bffaf1d77f3a023, type: 2}
   _scoreIncrease: 10
 --- !u!4 &1566011524
 Transform:
