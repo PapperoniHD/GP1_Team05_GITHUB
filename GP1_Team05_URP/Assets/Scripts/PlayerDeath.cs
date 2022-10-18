@@ -51,7 +51,8 @@ public class PlayerDeath : MonoBehaviour
             GameObject.Find("DeathManager").GetComponent<DeathManager>().playerAlive--;
             isDead = true;
         }
-        else if (other.gameObject.CompareTag("Death"))
+        
+        if (other.gameObject.CompareTag("Death") && GetComponent<AbilityPickup>().invincible)
         {
             Destroy(other.gameObject);
         }

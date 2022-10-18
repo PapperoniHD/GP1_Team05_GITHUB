@@ -9,6 +9,7 @@ public class PlayerInputScript : MonoBehaviour
     private PlayerInput _playerInput;
     private Transform playerTransform;
     
+    
     //Groundcheck
     public Transform groundCheck;
     private float groundDistance = 1f;
