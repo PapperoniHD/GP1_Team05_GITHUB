@@ -183,7 +183,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 677ca70af7c706c408282a7f5df5b43f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f714a713c159972448bcec6788baf2ec, type: 2}
   m_sharedMaterial: {fileID: -3447375658911690417, guid: 677ca70af7c706c408282a7f5df5b43f,
     type: 2}
   m_fontSharedMaterials: []
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &21148415
@@ -913,8 +913,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: START GAME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 677ca70af7c706c408282a7f5df5b43f, type: 2}
-  m_sharedMaterial: {fileID: -3447375658911690417, guid: 677ca70af7c706c408282a7f5df5b43f,
+  m_fontAsset: {fileID: 11400000, guid: f714a713c159972448bcec6788baf2ec, type: 2}
+  m_sharedMaterial: {fileID: -3447375658911690417, guid: f714a713c159972448bcec6788baf2ec,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1090,6 +1090,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 855090371}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: Select
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1579,6 +1591,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 490317494}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: Select
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2115,8 +2139,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEADERBOARD
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 677ca70af7c706c408282a7f5df5b43f, type: 2}
-  m_sharedMaterial: {fileID: -3447375658911690417, guid: 677ca70af7c706c408282a7f5df5b43f,
+  m_fontAsset: {fileID: 11400000, guid: f714a713c159972448bcec6788baf2ec, type: 2}
+  m_sharedMaterial: {fileID: -3447375658911690417, guid: f714a713c159972448bcec6788baf2ec,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2386,7 +2410,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEADERBOARD
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 677ca70af7c706c408282a7f5df5b43f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f714a713c159972448bcec6788baf2ec, type: 2}
   m_sharedMaterial: {fileID: -3447375658911690417, guid: 677ca70af7c706c408282a7f5df5b43f,
     type: 2}
   m_fontSharedMaterials: []
@@ -2452,7 +2476,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1817166454
