@@ -12,6 +12,10 @@ namespace ElliotsSpawnerAndShader.ElliotsSpawnerAndShader.SpawnerProto
         {
             _rigidbody = GetComponent<Rigidbody>();
             _generation = FindObjectOfType<LevelGeneration>().GetComponent<LevelGeneration>();
+            
+            //Set speed on awake to avoid issues from fixed update
+            var speed = _generation.globalSpeed;
+            _rigidbody.velocity = new Vector3(0, 0, -speed);
         }
 
         void Update()
