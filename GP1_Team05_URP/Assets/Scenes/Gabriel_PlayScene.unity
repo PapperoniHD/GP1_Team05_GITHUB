@@ -1673,6 +1673,7 @@ MonoBehaviour:
   playerAlive: 0
   gameOver: 0
   playerSpawned: 0
+  gameOverDelay: 1
 --- !u!4 &591877442
 Transform:
   m_ObjectHideFlags: 0
@@ -1702,8 +1703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnBar1: {fileID: 1335009576}
   respawnBar2: {fileID: 1764752431}
-  player1: {fileID: 5886254265336741967, guid: 73444a4cc25c7864b82084d73e002c0f, type: 3}
-  player2: {fileID: 5886254265336741967, guid: b730a9e59700a3147b14b422bbe96b4f, type: 3}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!1 &651551720
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,10 +3786,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ba3f2460706756643964fa40dcdb63ca, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -4722,10 +4723,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 4d45a609ee8b59745aec351e2c9590e1, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
