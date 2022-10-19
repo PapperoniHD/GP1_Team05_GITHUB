@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ElliotsSpawnerAndShader.ElliotsSpawnerAndShader.SpawnerProto;
 using UnityEngine;
 using TMPro;
 public class ScoreTextScript : MonoBehaviour
