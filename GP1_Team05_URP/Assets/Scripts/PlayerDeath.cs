@@ -23,12 +23,15 @@ public class PlayerDeath : MonoBehaviour
 
     public float _respawnBarValue;
     private DeathManager _deathManager;
-    
+
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         _respawnBarValue = respawnTime;
         _deathManager = FindObjectOfType<DeathManager>().GetComponent<DeathManager>();
+        audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -53,8 +56,8 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Death") && !isGhost && GetComponent<AbilityPickup>().invincible == false)
         {
-            GameObject.Find("DeathManager").GetComponent<DeathManager>().playerAlive--;
             isDead = true;
+            audioManager.PlaySFX("Death");
         }
         
         if (other.gameObject.CompareTag("Death") && GetComponent<AbilityPickup>().invincible)
@@ -113,6 +116,7 @@ public class PlayerDeath : MonoBehaviour
 
     private IEnumerator DeathState()
     {
+        GameObject.Find("DeathManager").GetComponent<DeathManager>().playerAlive--;
         _respawnBarValue = 0;
         deathStateRunning = true;
         isGhost = true;
