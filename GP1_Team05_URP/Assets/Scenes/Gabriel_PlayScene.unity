@@ -1164,6 +1164,7 @@ MonoBehaviour:
   playerAlive: 0
   gameOver: 0
   playerSpawned: 0
+  gameOverDelay: 1
 --- !u!4 &591877442
 Transform:
   m_ObjectHideFlags: 0

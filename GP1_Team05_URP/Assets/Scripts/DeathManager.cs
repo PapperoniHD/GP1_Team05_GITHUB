@@ -10,7 +10,7 @@ public class DeathManager : MonoBehaviour
     public int playerAlive;
     public bool gameOver;
     public bool playerSpawned;
-
+    public float gameOverDelay = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -25,9 +25,22 @@ public class DeathManager : MonoBehaviour
         if (playerAlive <= 0 && playerSpawned)
         {
             gameOver = true;
-            print("GAMEOVER");
-            SceneManager.LoadScene(2);
+            
             AudioManager.Instance.PlaySFX("Death");
+            StartCoroutine(GameOver());
+            GameObject.Find("LevelGenerator").GetComponent<LevelGeneration>().globalSpeed = 0;
         }
     }
+
+    private IEnumerator GameOver()
+    {
+        
+        print("GAMEOVER");
+        
+        yield return new WaitForSeconds(gameOverDelay);
+        SceneManager.LoadScene(2);
+        
+    }
+    
+    
 }
