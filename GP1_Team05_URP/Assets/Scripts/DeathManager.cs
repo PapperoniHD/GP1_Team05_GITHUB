@@ -32,7 +32,16 @@ public class DeathManager : MonoBehaviour
     }
 
     private IEnumerator GameOver()
-    {
+    {   
+        playerOne.GetComponent<PlayerDeath>()._respawnBarValue = 0;
+        playerOne.SetActive(false);
+        if (playerTwo != null)
+        {
+            playerTwo.GetComponent<PlayerDeath>()._respawnBarValue = 0;
+            playerTwo.SetActive(false);
+        }
+        
+        
         
         print("GAMEOVER");
         

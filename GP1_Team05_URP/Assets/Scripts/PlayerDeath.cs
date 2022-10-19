@@ -22,11 +22,13 @@ public class PlayerDeath : MonoBehaviour
     private bool deathStateRunning;
 
     public float _respawnBarValue;
+    private DeathManager _deathManager;
     
     // Start is called before the first frame update
     void Start()
     {
         _respawnBarValue = respawnTime;
+        _deathManager = FindObjectOfType<DeathManager>().GetComponent<DeathManager>();
     }
 
     // Update is called once per frame
@@ -74,7 +76,7 @@ public class PlayerDeath : MonoBehaviour
             {
                 StartCoroutine(_deathState);
             }
-            
+
         }
         
     }
