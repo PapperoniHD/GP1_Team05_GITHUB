@@ -20,6 +20,6 @@ public class ItemBob : MonoBehaviour
     {
         elapsedTime += Time.deltaTime * Time.timeScale * frequency;
         transform.localPosition = Vector3.up * Mathf.Sin(elapsedTime) * amplitude;
-        transform.Rotate(Vector3.up, speed * Time.deltaTime);
+        transform.Rotate(Vector3.forward, speed * Time.deltaTime);
     }
 }

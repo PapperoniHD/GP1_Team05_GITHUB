@@ -47,7 +47,6 @@ public class PlayerInputScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerTransform = GetComponent<Transform>();
 
-        WaterWake();
     }
 
     private void Movement_performed(InputAction.CallbackContext context)
@@ -82,6 +81,8 @@ public class PlayerInputScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        WaterWake();
         HandleGravity();
         HandleSubmerge();
         Movement();
