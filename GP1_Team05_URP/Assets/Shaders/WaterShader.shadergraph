@@ -19,9 +19,6 @@
             "m_Id": "7354d57801cc4b968d864c73035da41a"
         },
         {
-            "m_Id": "c48e7ea22c9349a58acb28800f031a8e"
-        },
-        {
             "m_Id": "1d85b22e0490458da33a9b3951920cd1"
         },
         {
@@ -531,20 +528,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "2061a8968aa049d0b45701583101afd7"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "dc8a4a8d8ad04d34b04a661f5d8971c2"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "23e121b8961949a4837a1a6dfb07ce42"
                 },
                 "m_SlotId": 3
@@ -874,6 +857,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "8d96b87044f74ba6adaa05726601ac1d"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "5bfe3358587f41698cdc26abfeb126b3"
+                },
+                "m_SlotId": 1
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "dc8a4a8d8ad04d34b04a661f5d8971c2"
                 },
                 "m_SlotId": 0
             }
@@ -8171,9 +8168,6 @@
             "m_Id": "7354d57801cc4b968d864c73035da41a"
         },
         {
-            "m_Id": "c48e7ea22c9349a58acb28800f031a8e"
-        },
-        {
             "m_Id": "1d85b22e0490458da33a9b3951920cd1"
         },
         {
@@ -9355,35 +9349,6 @@
         "z": 0.0,
         "w": 0.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
-    "m_ObjectId": "c48e7ea22c9349a58acb28800f031a8e",
-    "m_Guid": {
-        "m_GuidSerialized": "fc465728-4ba2-44ae-9935-43d141721f60"
-    },
-    "m_Name": "Height",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Height",
-    "m_DefaultReferenceName": "_Height",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
-        "m_Guid": ""
-    },
-    "isMainTexture": false,
-    "useTilingAndOffset": false,
-    "m_Modifiable": true,
-    "m_DefaultType": 0
 }
 
 {
