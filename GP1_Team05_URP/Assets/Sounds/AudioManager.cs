@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] ambientSounds, sfxSounds;
     public AudioSource ambientSource, sfxSource;
+
+    public AudioSource Music;
+    public AudioSource Death;
+    public AudioSource Jump;
+    public AudioSource PickUp;
+    public AudioSource Bump;
 
 
     private void Awake()
@@ -29,6 +36,15 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        Music.volume = 0.1f;
+        Death.volume = 0.1f;
+        Jump.volume = 0.3f;
+        Bump.volume = 0.5f;
+        PickUp.volume = 0.5f;
+    }
+
+    private void Update()
+    {
 
     }
 
@@ -46,6 +62,7 @@ public class AudioManager : MonoBehaviour
         {
             ambientSource.clip = s.clip;
             ambientSource.Play();
+
         }
 
     }
@@ -63,6 +80,7 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.clip = s.clip;
             sfxSource.Play();
+
         }
     }
 
