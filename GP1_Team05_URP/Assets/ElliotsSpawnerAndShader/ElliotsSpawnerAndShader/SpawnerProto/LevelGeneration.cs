@@ -1,53 +1,57 @@
 
-using Random = UnityEngine.Random;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class LevelGeneration : MonoBehaviour
+namespace ElliotsSpawnerAndShader.ElliotsSpawnerAndShader.SpawnerProto
 {
-    [SerializeField] private GameObject[] _waterPlanePrefab;
-    
-    [SerializeField] private float _waterHeight;
-    [SerializeField] private float _tiles;
-    
-    [SerializeField] private float _maxSpeed;
-    [SerializeField] private float _speedIncrease;
-    [SerializeField] private float _startSpeeed;
-    private GameObject _currentPlane;
-    private float _planeLength;
-    private Rigidbody _planeRigid;
-
-    public float globalSpeed;
-
-    private void Awake()
+    public class LevelGeneration : MonoBehaviour
     {
-        globalSpeed += _startSpeeed;
-        _planeLength = (_waterPlanePrefab[0].transform.GetChild(0).GetComponent<Renderer>().bounds.size.z)-5;
+        [SerializeField] private GameObject[] _waterPlanePrefab;
+    
+        [SerializeField] private float _waterHeight;
+        [SerializeField] private float _tiles;
+        [SerializeField] private float _emptyPlanes = 2f;
+    
+        [SerializeField] private float _maxSpeed;
+        [SerializeField] private float _speedIncrease;
+        [SerializeField] private float _startSpeeed;
+        private GameObject _currentPlane;
+        private float _planeLength;
+        private Rigidbody _planeRigid;
 
-        for (int i = 0; i < _tiles; i++)
+        public float globalSpeed;
+
+        private void Awake()
         {
-            if (i <= 0)
+            globalSpeed += _startSpeeed;
+            _planeLength = (_waterPlanePrefab[0].transform.GetChild(0).GetComponent<Renderer>().bounds.size.z)-5;
+
+            for (int i = 0; i < _tiles; i++)
             {
-                GeneratePlane(-_planeLength*(_tiles-i),0,0);
-            } else {
-                GeneratePlane(-_planeLength*(_tiles-i),1,_waterPlanePrefab.Length);
+                if (i <= _emptyPlanes-1)
+                {
+                    GeneratePlane(-_planeLength*(_tiles-i),0,0);
+                } else {
+                    GeneratePlane(-_planeLength*(_tiles-i),1,_waterPlanePrefab.Length);
+                }
             }
         }
-    }
 
-    private void Update()
-    {
-        if (_currentPlane.transform.position.z <= 0+_planeLength*(_tiles-1))
+        private void Update()
         {
-            GeneratePlane(0,1,_waterPlanePrefab.Length);
+            if (_currentPlane.transform.position.z <= 0+_planeLength*(_tiles-1))
+            {
+                GeneratePlane(0,1,_waterPlanePrefab.Length);
+            }
+            if (globalSpeed <= _maxSpeed) globalSpeed += _speedIncrease * Time.deltaTime;
+            globalSpeed = Mathf.Clamp(globalSpeed, 0, _maxSpeed);
         }
-        if (globalSpeed <= _maxSpeed) globalSpeed += _speedIncrease * Time.deltaTime;
-        globalSpeed = Mathf.Clamp(globalSpeed, 0, _maxSpeed);
-    }
 
-    private void GeneratePlane(float offset,int range1, int range2)
-    {
-        _currentPlane = Instantiate(_waterPlanePrefab[Random.Range(range1,range2)],
-            new Vector3(0, _waterHeight, 0+(_planeLength*_tiles)+offset),
-            Quaternion.identity);
+        private void GeneratePlane(float offset,int range1, int range2)
+        {
+            _currentPlane = Instantiate(_waterPlanePrefab[Random.Range(range1,range2)],
+                new Vector3(0, _waterHeight, 0+(_planeLength*_tiles)+offset),
+                Quaternion.identity);
+        }
     }
 }

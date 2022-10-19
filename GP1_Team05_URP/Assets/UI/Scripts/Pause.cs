@@ -1,58 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Pause : MonoBehaviour
+namespace UI.Scripts
 {
-    [SerializeField] private GameObject pauseMenu;
-    public static bool gameIsPaused;
-
-    public void StartGame()
+    public class Pause : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1;
-    }
+        [SerializeField] private GameObject pauseMenu;
+        public static bool gameIsPaused;
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-    public void Menu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void Restart()
-	{
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void Leaderboard()
-	{
-        SceneManager.LoadScene(3);
-    }
-
-    public void OnPause()
-    {
-        print("Pause");
-        gameIsPaused = !gameIsPaused;
-        PauseGame();
-    }
-
-    public void PauseGame()
-    {
-        if (gameIsPaused)
+        public void StartGame()
         {
-            Time.timeScale = 0f;
-            pauseMenu.SetActive(true);
-
-        }
-        else
-        {
+            SceneManager.LoadScene(1);
             Time.timeScale = 1;
-            pauseMenu.SetActive(false);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+
+        public void Menu()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void Leaderboard()
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        public void OnPause()
+        {
+            print("Pause");
+            gameIsPaused = !gameIsPaused;
+            PauseGame();
+        }
+
+        public void PauseGame()
+        {
+            if (gameIsPaused)
+            {
+                Time.timeScale = 0f;
+                pauseMenu.SetActive(true);
+
+            }
+            else
+            {
+                Time.timeScale = 1;
+                pauseMenu.SetActive(false);
+            }
         }
     }
 }
