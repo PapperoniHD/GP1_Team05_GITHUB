@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Sounds;
+using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerInputScript : MonoBehaviour
