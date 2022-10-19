@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
+
 public class PlayerInputScript : MonoBehaviour
 {
     private Rigidbody rb;
     private PlayerInput _playerInput;
     private Transform playerTransform;
-    
-    
+
+
     //Groundcheck
     public Transform groundCheck;
     private float groundDistance = 1f;
     public LayerMask groundMask;
     public bool isGrounded;
-    
+
     //Movement and Gravity variables
     float gravity = 9.81f;
     public float gravityMultiplier = 1;
@@ -26,36 +28,38 @@ public class PlayerInputScript : MonoBehaviour
     public float jumpForce = 3000;
     private PlayerController playerController;
     private Vector2 movementInput;
-    
+
     //Rotation
     private float _yRotation;
     private float _zRotation;
-    
+
     //Jumping
     private float _jumpBuffer;
-    
-    
-    [SerializeField ] private float turnSmoothTime = 0.1f;
+
+    [SerializeField] private GameObject waterWake;
+
+
+    [SerializeField] private float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerTransform = GetComponent<Transform>();
-        
-        
+
+        WaterWake();
     }
 
     private void Movement_performed(InputAction.CallbackContext context)
     {
         //Debug.Log(context);
-        
-        
+
+
     }
 
     private void FixedUpdate()
     {
-        
+
     }
 
     void EnableInput()
@@ -63,17 +67,17 @@ public class PlayerInputScript : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
 
         //_playerInput.onActionTriggered += PlayerInput_onActionTriggered;
-        
-        
+
+
         playerController = new PlayerController();
-        playerController.Player.Enable(); 
+        playerController.Player.Enable();
         //playerController.Player.Jump.performed += Jump;
         playerController.Player.Move.performed += Movement_performed;
-        
+
     }
 
- 
-    
+
+
 
     // Update is called once per frame
     void Update()
@@ -98,16 +102,17 @@ public class PlayerInputScript : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
     void Movement()
     {
-        
-            //Vector2 inputVector = playerController.Player.Move.ReadValue<Vector2>();
-            if (isGrounded)
-            {
-                rb.AddForce(new Vector3(0,0,movementInput.y).normalized * moveSpeed * _movementMultiplier * Time.deltaTime, ForceMode.Acceleration);
-            }
-            
-            
-            rb.AddForce(new Vector3(movementInput.x,0,0).normalized * moveSpeed * (_movementMultiplier * 1.5f ) *Time.deltaTime, ForceMode.Acceleration);
-            
+
+        //Vector2 inputVector = playerController.Player.Move.ReadValue<Vector2>();
+        if (isGrounded)
+        {
+            rb.AddForce(new Vector3(0, 0, movementInput.y).normalized * moveSpeed * _movementMultiplier * Time.deltaTime, ForceMode.Acceleration);
+
+        }
+
+
+        rb.AddForce(new Vector3(movementInput.x, 0, 0).normalized * moveSpeed * (_movementMultiplier * 1.5f) * Time.deltaTime, ForceMode.Acceleration);
+
 
     }
 
@@ -117,9 +122,9 @@ public class PlayerInputScript : MonoBehaviour
 
         if (!isGrounded)
         {
-            
+
             rb.AddForce(new Vector3(0, -gravity * gravityMultiplier, 0) * rb.mass * Time.deltaTime, ForceMode.Acceleration);
-            
+
         }
         else
         {
@@ -128,8 +133,8 @@ public class PlayerInputScript : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * 0.9f, rb.velocity.z);
             }
         }
-        
-        
+
+
     }
 
     void HandleSubmerge()
@@ -159,7 +164,7 @@ public class PlayerInputScript : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints.None;
             Debug.Log("Jump");
-          
+
             var newJumpForce = Mathf.Sqrt(jumpForce * -2f * -gravity) * rb.mass;
             rb.velocity = new Vector3(rb.velocity.x, newJumpForce, rb.velocity.z);
 
@@ -169,46 +174,58 @@ public class PlayerInputScript : MonoBehaviour
 
         if (_jumpBuffer > 0) _jumpBuffer -= 5f * Time.deltaTime;
     }
-    
+
     void ControlDrag()
     {
         rb.drag = rbDrag;
     }
 
-    
+
 
     private void OnEnable()
     {
         GameObject.FindWithTag("Start").GetComponent<StartGame>().playerJoined = true;
         GameObject.Find("DeathManager").GetComponent<DeathManager>().playerAlive++;
         GameObject.Find("DeathManager").GetComponent<DeathManager>().playerSpawned = true;
-        
-        
+
+
         EnableInput();
     }
 
     private void OnDisable()
     {
-        playerController.Player.Disable(); 
+        playerController.Player.Disable();
     }
 
-    void RotatePlayer()
+    private void RotatePlayer()
     {
         Vector3 direction = new Vector3(movementInput.x, 0, 0).normalized;
         var child = transform.GetChild(1).transform;
-        
+
         float targetAngleX = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg * 0.3f;
         _yRotation = Mathf.SmoothDampAngle(child.eulerAngles.y, targetAngleX, ref turnSmoothVelocity, turnSmoothTime);
-        
-        
+
+
         //
         //
         //child.rotation = Quaternion.Euler(rotate);
-        child.rotation = Quaternion.Euler(0,_yRotation,0);
-        
-        
+        child.rotation = Quaternion.Euler(0, _yRotation, 0);
+
+
         /*Vector3 rotate = new Vector3(0,Mathf.SmoothDampAngle(child.eulerAngles.y, targetAngleX, ref turnSmoothVelocity, turnSmoothTime),
             -Mathf.SmoothDampAngle(child.eulerAngles.y, targetAngleX * 0.5f, ref turnSmoothVelocity, turnSmoothTime));*/
-        
+
+    }
+
+    private void WaterWake()
+    {
+        if (isGrounded)
+        {
+            waterWake.SetActive(true);
+        }
+        if (!isGrounded)
+        {
+            waterWake.SetActive(false);
+        }
     }
 }

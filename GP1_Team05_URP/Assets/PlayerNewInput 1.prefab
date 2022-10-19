@@ -192,6 +192,8 @@ MonoBehaviour:
   gravityMultiplier: 2000
   moveSpeed: 1000
   jumpForce: 1000
+  waterWake: {fileID: 7713276098699237703, guid: cef27d6467597914494d1dba948d3fa5,
+    type: 3}
   turnSmoothTime: 0.1
 --- !u!114 &5886254265336742000
 MonoBehaviour:
