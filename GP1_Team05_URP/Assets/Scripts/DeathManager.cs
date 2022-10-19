@@ -14,6 +14,7 @@ public class DeathManager : MonoBehaviour
     {
         gameOver = false;
         playerSpawned = false;
+
     }
 
     // Update is called once per frame
@@ -21,11 +22,16 @@ public class DeathManager : MonoBehaviour
     {
         if (playerAlive <= 0 && playerSpawned)
         {
-            
+
             gameOver = true;
             print("GAMEOVER");
             SceneManager.LoadScene(2);
+
             AudioManager.Instance.PlaySFX("Death");
+          
+
+
+
         }
     }
 }
