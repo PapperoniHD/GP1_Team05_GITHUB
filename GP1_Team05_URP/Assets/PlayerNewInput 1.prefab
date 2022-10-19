@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 6870998347235928103}
   - component: {fileID: 6371489077591809339}
   - component: {fileID: 4148315189048924614}
+  - component: {fileID: 5041491787421641104}
   m_Layer: 0
   m_Name: PlayerNewInput 1
   m_TagString: Player
@@ -184,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fa175b23ce90e45a45c9c95c259b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splash: {fileID: 6405339355599768897, guid: 1a7947508d929aa4a8670d5c1ed4a2d3, type: 3}
   groundCheck: {fileID: 5886254264201963447}
   groundMask:
     serializedVersion: 2
@@ -292,6 +292,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 848ea7f3-adeb-4cee-aa01-321a5c176e8f
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5041491787421641104}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: PauseFunction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 22b3f0a4-9162-477e-88df-18013f29a215
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -342,6 +358,20 @@ MonoBehaviour:
   invincibilityTimer: 3
   invincible: 0
   shield: {fileID: 1012765093264116252}
+--- !u!114 &5041491787421641104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5886254265336741967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44011ceb590cbfe4f91f17a7571d5643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 2720290882499858683, guid: 38362355cb70bbc4c886468db098d711,
+    type: 3}
 --- !u!1001 &1979117644322641991
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,11 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
+    private PlayerInput _playerInput;
+    private PlayerController playerController;
     [SerializeField] private GameObject pauseMenu;
     public static bool gameIsPaused;
+
+    void OnEnable()
+	{
+        _playerInput = GetComponent<PlayerInput>();
+        playerController = new PlayerController();
+        //playerController.Player.PauseFunction.performed += PauseFunction;
+    }
+
+	public void PauseFunction(InputAction.CallbackContext context)
+    {
+        print("Paused");
+		if (context.performed)
+		{
+            OnPause();
+        }
+        
+    }
 
     public void StartGame()
     {
