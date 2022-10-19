@@ -68,17 +68,33 @@ public class PlayerDeath : MonoBehaviour
     
     void HandleDeath()
     {
-        if (isDead)
-        {
-            
-            _deathState = DeathState();
-            if (!deathStateRunning)
-            {
-                StartCoroutine(_deathState);
-            }
 
+        if (_deathManager.gameOver == false)
+        {
+            if (isDead)
+            {
+            
+                _deathState = DeathState();
+                if (!deathStateRunning)
+                {
+                    StartCoroutine(_deathState);
+                }
+
+            }
+        }
+        else
+        {
+            StopAllCoroutines();
+            _respawnBarValue = 0;
+            deathStateRunning = true;
+            isGhost = true;
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            _mesh.SetActive(false);
         }
         
+        
+        
+
     }
     
     void RespawnBarTime()
