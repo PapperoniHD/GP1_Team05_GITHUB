@@ -20,17 +20,20 @@ public class PlayerDeath : MonoBehaviour
     
     private bool isGhost;
     private bool deathStateRunning;
+
+    public float _respawnBarValue;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        _respawnBarValue = respawnTime;
     }
 
     // Update is called once per frame
     void Update()
     {
         HandleDeath();
+        RespawnBarTime();
     }
 
     private void OnEnable()
@@ -75,9 +78,24 @@ public class PlayerDeath : MonoBehaviour
         }
         
     }
+    
+    void RespawnBarTime()
+    {
+        if (isDead)
+        {
+            _respawnBarValue += Time.deltaTime;
+
+            if (_respawnBarValue >= respawnTime)
+            {
+                _respawnBarValue = respawnTime;
+            }
+        }
+    }
+    
 
     private IEnumerator DeathState()
     {
+        _respawnBarValue = 0;
         deathStateRunning = true;
         isGhost = true;
         rb.constraints = RigidbodyConstraints.FreezeAll;
