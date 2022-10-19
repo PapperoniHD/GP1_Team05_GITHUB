@@ -1053,6 +1053,7 @@ MonoBehaviour:
   _waterPlanePrefab:
   - {fileID: 32050152052633216, guid: e7f8877c53c7e164392d273a92ca17a2, type: 3}
   - {fileID: 32050152052633216, guid: 6dc6262b58da94c429c76e44ca5cae9f, type: 3}
+  - {fileID: 32050152052633216, guid: e4ee01139f3821744bfa7d2754d3ddb0, type: 3}
   - {fileID: 32050152052633216, guid: 44c930a54e317b840b5ce389ecd81714, type: 3}
   - {fileID: 32050152052633216, guid: 7f7df631de9e1744ba611f2c90e9e190, type: 3}
   - {fileID: 32050152052633216, guid: a0622c7f4f10d3e42aea7d15f8ce701b, type: 3}
@@ -1060,6 +1061,13 @@ MonoBehaviour:
   - {fileID: 32050152052633216, guid: 0f3e39d975723284687076971481161f, type: 3}
   - {fileID: 32050152052633216, guid: 2a43a3e41bf8b294aa4d6a0630bce753, type: 3}
   - {fileID: 32050152052633216, guid: ad270ab2acd49ac4fb541eb9e8a3cf1c, type: 3}
+  - {fileID: 32050152052633216, guid: 13d6e6aa92bd3794f8cbc50d9615082e, type: 3}
+  - {fileID: 32050152052633216, guid: af9e9feb72e453949bf39784461e3552, type: 3}
+  - {fileID: 32050152052633216, guid: f8121e00cc00fe74e8d05cea5fc93ee3, type: 3}
+  - {fileID: 32050152052633216, guid: 825373150678878449787778d89ee472, type: 3}
+  - {fileID: 32050152052633216, guid: f771fddfe2457a94b99e74d880492289, type: 3}
+  - {fileID: 32050152052633216, guid: d9ace2c3262d64a4286cf652e9be0db7, type: 3}
+  - {fileID: 32050152052633216, guid: ae0c0fded24e16d4597dd1165cad62fb, type: 3}
   _waterHeight: 13
   _tiles: 10
   _emptyPlanes: 2
