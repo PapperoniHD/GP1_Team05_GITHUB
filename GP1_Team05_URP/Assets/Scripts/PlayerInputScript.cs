@@ -38,6 +38,10 @@ public class PlayerInputScript : MonoBehaviour
 
     [SerializeField] private GameObject waterWake;
 
+    //WaterSplash
+    [SerializeField] private GameObject waterSplashPrefab;
+    private bool landed = false;
+
 
     [SerializeField] private float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -91,11 +95,24 @@ public class PlayerInputScript : MonoBehaviour
         RotatePlayer();
         JumpAction();
 
+        SplashEffect();
+
         print("Is grounded =" + isGrounded);
 
         if (GameObject.Find("DeathManager").GetComponent<DeathManager>().gameOver == true)
         {
             playerController.Disable();
+        }
+    }
+
+    private void SplashEffect()
+    {
+        if (isGrounded && !landed && rb.velocity.y < 0)
+        {
+            var splash = Instantiate(waterSplashPrefab, transform.position,Quaternion.identity);
+            print("Sploosh");
+       
+            landed = true;
         }
     }
 
@@ -171,6 +188,8 @@ public class PlayerInputScript : MonoBehaviour
 
             _jumpBuffer = 0f;
             AudioManager.Instance.PlaySFX("Jump");
+
+            landed = false;
         }
 
         if (_jumpBuffer > 0) _jumpBuffer -= 5f * Time.deltaTime;

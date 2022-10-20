@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6405339353737117829}
   m_LocalRotation: {x: -0.9999995, y: -0, z: -0, w: 0.0009562968}
-  m_LocalPosition: {x: 0, y: -0, z: 0.058}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.058}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6405339355599768898}
@@ -4894,8 +4894,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6405339354978278762}
   m_LocalRotation: {x: 0.00000003090862, y: -0.7071068, z: -0.7071068, w: -0.00000003090862}
-  m_LocalPosition: {x: 0.02873683, y: -0.07300019, z: -0.06628056}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.028738588, y: -0.073003985, z: -0.053962436}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6405339355599768898}
@@ -4912,6 +4912,7 @@ GameObject:
   - component: {fileID: 6405339355599768898}
   - component: {fileID: 6405339355599768897}
   - component: {fileID: 6405339355599768896}
+  - component: {fileID: 4030775892893232752}
   m_Layer: 0
   m_Name: Bigsplash
   m_TagString: Untagged
@@ -4927,9 +4928,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6405339355599768911}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 10.72, z: -0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6405339354978278763}
   - {fileID: 6746931605758049483}
@@ -5512,8 +5513,8 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 2
+      scalar: 15
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6602,6 +6603,15 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.3376288
+          value: -0.8918918
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9811,6 +9821,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4030775892893232752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405339355599768911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f9381262341584283e5689ac79e4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  death: {fileID: 6405339355599768897}
 --- !u!1 &6749590909998563297
 GameObject:
   m_ObjectHideFlags: 0
@@ -9838,8 +9861,8 @@ Transform:
   m_GameObject: {fileID: 6749590909998563297}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000028554489}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6405339355599768898}
   m_RootOrder: 1
@@ -10419,8 +10442,8 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
-      minScalar: 2
+      scalar: 10
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:

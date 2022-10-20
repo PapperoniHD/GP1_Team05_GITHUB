@@ -228,6 +228,8 @@ MonoBehaviour:
   moveSpeed: 1000
   jumpForce: 1000
   waterWake: {fileID: 2543392306402635102}
+  waterSplashPrefab: {fileID: 6405339355599768911, guid: 1a7947508d929aa4a8670d5c1ed4a2d3,
+    type: 3}
   turnSmoothTime: 0.1
 --- !u!114 &5886254265336742000
 MonoBehaviour:
