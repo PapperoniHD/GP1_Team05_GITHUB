@@ -17,6 +17,7 @@ public class RespawnBar : MonoBehaviour
 
     private DeathManager _dthMng;
 
+    private float respawnTime;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class RespawnBar : MonoBehaviour
         {
             PlayerDeath restartScript1 = player1.GetComponent<PlayerDeath>();
             respawnTimer1 = restartScript1._respawnBarValue;
+            respawnTime = restartScript1.respawnTime;
         }
 
         if (player2 != null)
@@ -53,8 +55,8 @@ public class RespawnBar : MonoBehaviour
         
         
       
-        respawnBar1.fillAmount = respawnTimer1 / 2;
-        respawnBar2.fillAmount = respawnTimer2 / 2;
+        respawnBar1.fillAmount = respawnTimer1 / respawnTime;
+        respawnBar2.fillAmount = respawnTimer2 / respawnTime;
 
     }
     

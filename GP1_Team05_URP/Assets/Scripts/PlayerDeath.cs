@@ -15,6 +15,7 @@ public class PlayerDeath : MonoBehaviour
     private Transform _spawn;
     private IEnumerator _deathState;
     [SerializeField] private ParticleSystem death;
+    [SerializeField] private GameObject deathPrefab;
 
     public bool isDead;
     public GameObject _mesh;
@@ -57,10 +58,10 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Death") && !isGhost && GetComponent<AbilityPickup>().invincible == false)
         {
+            var exploPosistion = transform.position + new Vector3(0,2,0);
 
-
-            death.Play();
-            //Instantiate(death, transform.position, Quaternion.identity);
+            Instantiate(deathPrefab, exploPosistion,Quaternion.identity);
+            
             isDead = true;
             audioManager.PlaySFX("Death");
             audioManager.PlaySFX("Explosion");
