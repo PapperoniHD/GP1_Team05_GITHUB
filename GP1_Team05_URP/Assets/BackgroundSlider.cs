@@ -16,6 +16,9 @@ public class BackgroundSlider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Reset mat to base in case of bug
+        p1Material.SetTextureOffset("_BaseMap", new Vector2(0, 0));
+        
         _slider = GetComponent<Slider>();
         score = FindObjectOfType<Score>().GetComponent<Score>();
     }
@@ -28,7 +31,12 @@ public class BackgroundSlider : MonoBehaviour
         
         _slider.value = 0;
 
-        var p1Offset = 0.5f*(score.playerOneScore / (score.playerOneScore + score.playerTwoScore));
-        p1Material.SetTextureOffset("_BaseMap", new Vector2(0, p1Offset));
+        //Calculate the score into a variable between 0 and 1 and then multiply by 0.5 to get a value between 0 and 0.5
+        var percent = 0.6f;
+        var playerOneOffset = percent*(score.playerOneScore / (score.playerOneScore + score.playerTwoScore));
+        var playerTwoOffset = percent*(score.playerTwoScore / (score.playerOneScore + score.playerTwoScore));
+        //Apply new offset to material
+        p1Material.SetTextureOffset("_BaseMap", new Vector2(0, playerOneOffset));
+        p2Material.SetTextureOffset("_BaseMap", new Vector2(0, playerTwoOffset));
     }
 }

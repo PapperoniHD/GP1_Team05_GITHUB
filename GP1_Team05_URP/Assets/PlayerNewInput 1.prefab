@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43a743cfc5f3724aa39a341423bc98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 2
+  respawnTime: 5
   ghostTime: 3
   isDead: 0
   _mesh: {fileID: 2658326010801559705}
