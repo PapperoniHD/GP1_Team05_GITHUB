@@ -70,7 +70,6 @@ public class PlayerDeath : MonoBehaviour
         if (other.gameObject.CompareTag("Death") && GetComponent<AbilityPickup>().invincible)
         {
             Destroy(other.gameObject);
-            death.Play();
             audioManager.PlaySFX("Explosion");
         }
 

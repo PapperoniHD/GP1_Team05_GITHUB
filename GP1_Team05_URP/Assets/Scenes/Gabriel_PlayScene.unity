@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.5105903, g: 0.7401848, b: 0.9833995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1856,8 +1856,8 @@ MonoBehaviour:
   - Name: Bump
     clip: {fileID: 8300000, guid: f2cb16a826085e546b9ebae489bccb45, type: 3}
     Volume: 0
-  - Name: 
-    clip: {fileID: 0}
+  - Name: Explosion
+    clip: {fileID: 8300000, guid: d866b7a335e234d4ba827db224d0468b, type: 3}
     Volume: 0
   - Name: 
     clip: {fileID: 0}
