@@ -1068,6 +1068,9 @@ MonoBehaviour:
   - {fileID: 32050152052633216, guid: f771fddfe2457a94b99e74d880492289, type: 3}
   - {fileID: 32050152052633216, guid: d9ace2c3262d64a4286cf652e9be0db7, type: 3}
   - {fileID: 32050152052633216, guid: ae0c0fded24e16d4597dd1165cad62fb, type: 3}
+  - {fileID: 32050152052633216, guid: e44b3032cce8bb84ca48649d2be69a2e, type: 3}
+  - {fileID: 32050152052633216, guid: 1953bc3d5e947744f8e98a364c96af2d, type: 3}
+  - {fileID: 32050152052633216, guid: 3133f46fc18d3954d95f6f7801e04768, type: 3}
   _waterHeight: 13
   _tiles: 10
   _emptyPlanes: 2
