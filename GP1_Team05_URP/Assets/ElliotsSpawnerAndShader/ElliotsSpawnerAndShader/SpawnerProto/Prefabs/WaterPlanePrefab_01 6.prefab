@@ -686,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpPrefab: {fileID: 2640429298331241554, guid: ebccac8c288258a4c83cacf059b47145,
     type: 3}
-  spawnChance: 100
+  spawnChance: 0
 --- !u!1001 &415529002250969741
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,11 +9,12 @@ public class AbilityPickup : MonoBehaviour
     public bool invincible;
     public GameObject shield;
 
+
     private void Start()
     {
         invincible = false;
         shield.SetActive(false);
-        
+
     }
 
     private void Update()
