@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43a743cfc5f3724aa39a341423bc98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 2
+  respawnTime: 4
   ghostTime: 3
   isDead: 0
   _mesh: {fileID: 2658326010801559705}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9453987a46c664b9d17a3f34e54453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibilityTimer: 3
+  invincibilityTimer: 4
   invincible: 0
   shield: {fileID: 1012765093264116252}
 --- !u!1 &6290002820452317953

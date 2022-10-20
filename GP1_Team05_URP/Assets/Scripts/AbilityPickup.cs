@@ -25,26 +25,33 @@ public class AbilityPickup : MonoBehaviour
     {
         if (invincible)
         {
-            StartCoroutine(Invincible());
+            
         }
     }
 
 
     private IEnumerator Invincible()
     {
+        print("shield activated");
         shield.SetActive(true);
         yield return new WaitForSeconds(invincibilityTimer);
+        
         shield.SetActive(false);
         invincible = false;
+        print("shield deactivated");
     }
-
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("INV"))
         {
+            StopAllCoroutines();
+            StartCoroutine(Invincible());
             Destroy(other.gameObject);
             invincible = true;
             AudioManager.Instance.PlaySFX("PowerUp");
         }
+
     }
 }
