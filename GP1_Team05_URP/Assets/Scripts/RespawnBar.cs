@@ -53,8 +53,8 @@ public class RespawnBar : MonoBehaviour
         
         
       
-        respawnBar1.fillAmount = respawnTimer1 / 2f;
-        respawnBar2.fillAmount = respawnTimer2 / 2f;
+        respawnBar1.fillAmount = respawnTimer1 / 2;
+        respawnBar2.fillAmount = respawnTimer2 / 2;
 
     }
     
