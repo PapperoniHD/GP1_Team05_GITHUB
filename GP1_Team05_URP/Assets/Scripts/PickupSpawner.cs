@@ -23,7 +23,7 @@ public class PickupSpawner : MonoBehaviour
         GameObject randomSpawn = childSpawns[Random.Range(0, childSpawns.Length)].gameObject;
 
         print(_spawnChance);
-        if (_spawnChance <= spawnChance);
+        if (_spawnChance <= spawnChance)
         {
             Instantiate(pickUpPrefab, randomSpawn.transform);
         }
