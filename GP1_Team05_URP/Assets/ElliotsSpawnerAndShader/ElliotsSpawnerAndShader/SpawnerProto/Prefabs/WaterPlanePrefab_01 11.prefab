@@ -615,6 +615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boj
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36ab24662f94e9749822637f46a13de8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Death
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36ab24662f94e9749822637f46a13de8, type: 3}
 --- !u!4 &420074825039190062 stripped
@@ -629,8 +634,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 170818677396406213}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &4851139810049789592
-MeshCollider:
+--- !u!65 &6402809968806540675
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -639,10 +644,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.03, z: 0.02}
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1001 &840521026749880460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -860,6 +864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boj (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36ab24662f94e9749822637f46a13de8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Death
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36ab24662f94e9749822637f46a13de8, type: 3}
 --- !u!4 &3968985935275552371 stripped
@@ -874,8 +883,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3503258246987352472}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &8931588072055430466
-MeshCollider:
+--- !u!65 &8883675532796939556
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -884,10 +893,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.03, z: 0.02}
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1001 &3952530089102709075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,6 +983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boj (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36ab24662f94e9749822637f46a13de8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Death
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36ab24662f94e9749822637f46a13de8, type: 3}
 --- !u!4 &3553494388933916344 stripped
@@ -989,8 +1002,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3952530089102709075}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &8677078926254877567
-MeshCollider:
+--- !u!65 &5600854000265278637
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -999,10 +1012,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.03, z: 0.02}
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1001 &4256513347748158428
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -699,6 +699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge2 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7031673077561562871, guid: 9f18abe785de4704892a449eaf22db90,
+        type: 3}
+      propertyPath: m_TagString
+      value: Death
+      objectReference: {fileID: 0}
     - target: {fileID: 7700686713253547085, guid: 9f18abe785de4704892a449eaf22db90,
         type: 3}
       propertyPath: m_RootOrder
