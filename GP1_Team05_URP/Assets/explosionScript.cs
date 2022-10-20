@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class explosionScript : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem death;
+    [SerializeField] private ParticleSystem particle;
     // Start is called before the first frame update
     void Start()
     {
-        death.Play();
+        particle.Play();
     }
 }
