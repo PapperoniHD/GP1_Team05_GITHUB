@@ -20,17 +20,12 @@ public class PickupSpawner : MonoBehaviour
 
 
         Transform[] childSpawns = gameObject.GetComponentsInChildren<Transform>();
-        GameObject randomSpawn = childSpawns[Random.Range(0, childSpawns.Length)].gameObject;
+        Transform randomSpawn = childSpawns[Random.Range(0, childSpawns.Length)];
 
         print(_spawnChance);
         if (_spawnChance <= spawnChance)
         {
-            Instantiate(pickUpPrefab, randomSpawn.transform);
+            Instantiate(pickUpPrefab, randomSpawn);
         }
-    }
-
-    private void Update()
-    {
-        
     }
 }

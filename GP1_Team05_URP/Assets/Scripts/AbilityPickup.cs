@@ -16,19 +16,6 @@ public class AbilityPickup : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        Abilities();
-    }
-
-    void Abilities()
-    {
-        if (invincible)
-        {
-            
-        }
-    }
-
 
     private IEnumerator Invincible()
     {
