@@ -12,20 +12,32 @@ public class BackgroundSlider : MonoBehaviour
     public Material p1Material;
     
     public Material p2Material;
-        
+
+    private DeathManager _deathManager;
+    
     // Start is called before the first frame update
     void Start()
     {
+        _deathManager = FindObjectOfType<DeathManager>().GetComponent<DeathManager>();
         //Reset mat to base in case of bug
         p1Material.SetTextureOffset("_BaseMap", new Vector2(0, 0));
         
-        _slider = GetComponent<Slider>();
+        _slider = GetComponentInChildren<Slider>();
         score = FindObjectOfType<Score>().GetComponent<Score>();
+        
+        _slider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (_deathManager.playerAlive > 1)
+        {
+            _slider.gameObject.SetActive(true);
+        }
+        
+        
         _slider.minValue = -score.playerOneScore;
         _slider.maxValue = score.playerTwoScore;
         
