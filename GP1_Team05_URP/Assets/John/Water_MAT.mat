@@ -118,7 +118,7 @@ Material:
     - _DiplaceStrength: 1.35
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Foam_Amaunt: -0.17
+    - _Foam_Amaunt: -0.6
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
