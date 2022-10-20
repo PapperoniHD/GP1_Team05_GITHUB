@@ -7,17 +7,18 @@ using UnityEngine.XR;
 public class PlayerDeath : MonoBehaviour
 {
 
-    [Header("Death and Respawn")] 
+    [Header("Death and Respawn")]
     [SerializeField] public float respawnTime = 2f;
     [SerializeField] private float ghostTime = 3f;
     private Collider playerCollider;
     private Rigidbody rb;
     private Transform _spawn;
     private IEnumerator _deathState;
+    [SerializeField] private ParticleSystem death;
 
     public bool isDead;
     public GameObject _mesh;
-    
+
     private bool isGhost;
     private bool deathStateRunning;
 
@@ -56,19 +57,27 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Death") && !isGhost && GetComponent<AbilityPickup>().invincible == false)
         {
+
+
+            death.Play();
+            //Instantiate(death, transform.position, Quaternion.identity);
             isDead = true;
             audioManager.PlaySFX("Death");
+            audioManager.PlaySFX("Explosion");
+
         }
-        
+
         if (other.gameObject.CompareTag("Death") && GetComponent<AbilityPickup>().invincible)
         {
             Destroy(other.gameObject);
+            death.Play();
+            audioManager.PlaySFX("Explosion");
         }
 
-        
+
 
     }
-    
+
     void HandleDeath()
     {
 
@@ -76,7 +85,7 @@ public class PlayerDeath : MonoBehaviour
         {
             if (isDead)
             {
-            
+
                 _deathState = DeathState();
                 if (!deathStateRunning)
                 {
@@ -94,12 +103,12 @@ public class PlayerDeath : MonoBehaviour
             rb.constraints = RigidbodyConstraints.FreezeAll;
             _mesh.SetActive(false);
         }
-        
-        
-        
+
+
+
 
     }
-    
+
     void RespawnBarTime()
     {
         if (isDead)
@@ -112,7 +121,7 @@ public class PlayerDeath : MonoBehaviour
             }
         }
     }
-    
+
 
     private IEnumerator DeathState()
     {
@@ -123,23 +132,23 @@ public class PlayerDeath : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeAll;
         _mesh.SetActive(false);
         transform.position = _spawn.position;
-        
+
         yield return new WaitForSeconds(respawnTime);
-        
+
         _mesh.SetActive(true);
         isDead = false;
         GameObject.Find("DeathManager").GetComponent<DeathManager>().playerAlive++;
         print("Added");
         deathStateRunning = false;
         rb.constraints = RigidbodyConstraints.None;
-        
+
         yield return new WaitForSeconds(ghostTime);
-        
+
         isGhost = false;
         StopCoroutine(DeathState());
     }
 
-    
-    
-    
+
+
+
 }
